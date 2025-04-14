@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>NetIncome Search</title>
+    <title>財報淨利查詢</title>
     <script>
         const chartLabels={{ labels| tojson }};
         const chartValues={{ values| tojson }};
@@ -23,14 +23,18 @@
                     {% if error %}
                         <p style="color:red;">{{ error }}</p>
                     {% endif %}
-                    <form action="/" method="get">
-                        <input type="text" name="symbol" placeholder="symbol(股票簡稱)" required autofocus>
-                        <button type="submit">查詢</button>
+                    <form class="row g-2"  action="/" method="get">
+                        <div class="col-12 col-sm-8">
+                        <input class="form-control" type="text" name="symbol" placeholder="symbol(股票簡稱)" required autofocus>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                        <button class="btn btn-primary" type="submit">查詢</button>
+                        </div>
                     </form>
                     <h2>公司：{{ name }}</h2>
                     <p>年度範圍：{{ labels[0] }} - {{ labels[-1] }}</p>
                     <p>資料來源：Yahoo Finance</p>
-                    <div style="margin-right:125px;">
+                    <div style="margin-right:30px;">
                         <p>說明：輸入美國股市公司名稱的代號，就可以查詢公司近三年的淨利</p>
                     </div>
                 </div>
