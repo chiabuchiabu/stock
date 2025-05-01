@@ -19,5 +19,5 @@ def home():
         return render_template('index.html',labels=labels,values=values,name=name)
 
     except Exception as e:
-        error_message = f"取得資料時發生錯誤(輸入錯誤公司名)"
+        error_message = e
         return render_template('index.html', labels=[], values=[], name="-----", error=error_message)
